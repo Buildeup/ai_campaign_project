@@ -15,9 +15,10 @@ def show():
                 st.warning("⚠️ 모든 항목을 입력해주세요.")
                 return
 
-            campaign_id = db_handler.save_campaign(name, url)
-            if campaign_id:
-                st.success(f"🎯 캠페인 저장 완료 (ID: {campaign_id})")
-                st.session_state["campaign_id"] = campaign_id
-            else:
-                st.error("❌ 캠페인 저장 실패")
+            # campaign_id = db_handler.save_campaign(name, url)
+            # if campaign_id:
+            #     st.success(f"🎯 캠페인 저장 완료 (ID: {campaign_id})")
+            #     st.session_state["campaign_id"] = campaign_id
+            # else:
+            #     st.error("❌ 캠페인 저장 실패")
+            st.warning("⚠️ 현재 버전에서는 캠페인 저장 기능이 비활성화되어 있습니다.")
