@@ -22,3 +22,7 @@ def show():
             # else:
             #     st.error("❌ 캠페인 저장 실패")
             st.warning("⚠️ 현재 버전에서는 캠페인 저장 기능이 비활성화되어 있습니다.")
+
+            # 캠페인 저장 기능 비활성화와 관계없이 다음 페이지로 이동
+            st.session_state.page = "블로그 리스트 검색"
+            st.experimental_rerun() # 페이지 전환을 위해 앱을 다시 실행합니다.
