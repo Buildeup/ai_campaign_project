@@ -6,9 +6,9 @@ from modules import naver_api_handler, db_handler
 def show():
     st.header("2️⃣ 블로그 리스트 검색")
 
-    if "campaign_id" not in st.session_state:
-        st.warning("⚠️ 먼저 캠페인을 등록하세요.")
-        return
+    # if "campaign_id" not in st.session_state: # 캠페인 ID 확인 로직 주석 처리
+    #     st.warning("⚠️ 먼저 캠페인을 등록하세요.")
+    #     return
 
     with st.form("blog_search_form"):
         keyword = st.text_input("🔎 키워드")
@@ -26,7 +26,8 @@ def show():
             st.success(f"✅ 총 {len(blogs)}개 블로그를 가져왔습니다.")
             st.dataframe(pd.DataFrame(blogs))
 
-            saved = db_handler.save_blogs_to_db(blogs, st.session_state["campaign_id"])
-            st.success(f"💾 DB 저장 완료: {saved}개")
+            # saved = db_handler.save_blogs_to_db(blogs, st.session_state["campaign_id"]) # DB 저장 로직 주석 처리
+            # st.success(f"💾 DB 저장 완료: {saved}개")
+            st.warning("⚠️ 블로그 검색 결과 저장은 현재 비활성화되어 있습니다.") # DB 저장 비활성화 경고
         elif submitted:
             st.warning("⚠️ 키워드를 입력해주세요.")
